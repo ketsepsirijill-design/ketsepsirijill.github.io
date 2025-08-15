@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLOYSGEMS - ร้านขายอัญมณีและเครื่องประดับ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'thai': ['Kanit', 'sans-serif']
+                    },
+                    colors: {
+                        'jade': {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gradient-jade {
+            background: linear-gradient(135deg, #14532d 0%, #166534 25%, #15803d 50%, #22c55e 75%, #4ade80 100%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .jade-glow {
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+        }
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .shimmer {
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.5) 50%, transparent 70%);
+            background-size: 200% 200%;
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% -200%; }
+            100% { background-position: 200% 200%; }
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="gradient-jade min-h-screen font-thai">
+    <!-- Navigation -->
+    <nav class="glass-effect sticky top-0 z-50 border-b border-jade-400/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="text-3xl floating-animation">🟢</div>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-jade-200 to-jade-400">PLOYSGEMS</h1>
+                        <p class="text-jade-200 text-xs sm:text-sm">อัญมณีและเครื่องประดับหรู</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-jade-200 hover:text-jade-300 transition-colors duration-300">หน้าแรก</a>
+                    <a href="#products" class="text-jade-200 hover:text-jade-300 transition-colors duration-300">สินค้า</a>
+                    <a href="#services" class="text-jade-200 hover:text-jade-300 transition-colors duration-300">บริการ</a>
+                    <a href="#contact" class="text-jade-200 hover:text-jade-300 transition-colors duration-300">ติดต่อ</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-jade-300 hover:text-jade-200 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#home" class="text-jade-200 hover:text-jade-300 transition-colors duration-300 py-2">หน้าแรก</a>
+                    <a href="#products" class="text-jade-200 hover:text-jade-300 transition-colors duration-300 py-2">สินค้า</a>
+                    <a href="#services" class="text-jade-200 hover:text-jade-300 transition-colors duration-300 py-2">บริการ</a>
+                    <a href="#contact" class="text-jade-200 hover:text-jade-300 transition-colors duration-300 py-2">ติดต่อ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative py-12 sm:py-20 lg:py-32 fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="floating-animation mb-8">
+                    <h2 class="text-4xl sm:text-6xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-jade-200 via-jade-300 to-jade-400 mb-4 shimmer">
+                        PLOYSGEMS
+                    </h2>
+                </div>
+                
+                <p class="text-lg sm:text-xl lg:text-2xl text-jade-100 mb-4 max-w-4xl mx-auto leading-relaxed">
+                    ผู้เชี่ยวชาญด้านอัญมณีและเครื่องประดับหรู
+                </p>
+                <p class="text-base sm:text-lg text-jade-200 mb-8 max-w-3xl mx-auto">
+                    หยกเขียวแท้จากพม่า • การออกแบบเฉพาะ • ชิ้นงานสำเร็จคุณภาพพรีเมี่ยม
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button onclick="scrollToSection('products')" class="w-full sm:w-auto bg-gradient-to-r from-jade-600 to-jade-500 hover:from-jade-700 hover:to-jade-600 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-2xl jade-glow transform hover:scale-105">
+                        <span class="flex items-center justify-center space-x-2">
+                            <span>🟢</span>
+                            <span>ดูสินค้าของเรา</span>
+                        </span>
+                    </button>
+                    <button onclick="openInstagram()" class="w-full sm:w-auto border-2 border-jade-300 text-jade-200 hover:bg-jade-300 hover:text-jade-900 font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+                        <span class="flex items-center justify-center space-x-2">
+                            <span>📱</span>
+                            <span>Instagram @ploy_s_gems</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="py-12 sm:py-20 fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-jade-200 to-jade-400 mb-12">
+                สินค้าแนะนำ
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Green Jade from Myanmar -->
+                <div class="glass-effect rounded-2xl p-6 hover:transform hover:scale-105 transition-all duration-500 jade-glow group">
+                    <div class="text-center">
+                        <div class="text-5xl sm:text-6xl mb-6 floating-animation">🟢</div>
+                        <h4 class="text-xl sm:text-2xl font-bold text-jade-200 mb-3">หยกเขียวจากพม่า</h4>
+                        <p class="text-jade-100 mb-4 text-sm sm:text-base leading-relaxed">
+                            หยกเขียวแท้คุณภาพสูง นำเข้าจากพม่า<br>
+                            คัดสรรเฉพาะชิ้นที่มีความใสและสีสวย
+                        </p>
+                        <div class="mb-6">
+                            <span class="text-2xl sm:text-3xl font-bold text-white">฿100 - ฿100,000</span>
+                            <p class="text-jade-300 text-xs sm:text-sm mt-2">*ราคาขึ้นอยู่กับขนาด คุณภาพ และความใส</p>
+                        </div>
+                        <button onclick="contactForProduct('หยกเขียวจากพม่า')" class="w-full bg-gradient-to-r from-jade-600 to-jade-500 hover:from-jade-700 hover:to-jade-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 group-hover:shadow-lg">
+                            สอบถามราคา
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Custom Design Service -->
+                <div class="glass-effect rounded-2xl p-6 hover:transform hover:scale-105 transition-all duration-500 jade-glow group">
+                    <div class="text-center">
+                        <div class="text-5xl sm:text-6xl mb-6 floating-animation">🎨</div>
+                        <h4 class="text-xl sm:text-2xl font-bold text-jade-200 mb-3">การออกแบบพลอย</h4>
+                        <p class="text-jade-100 mb-4 text-sm sm:text-base leading-relaxed">
+                            ออกแบบเครื่องประดับตามความต้องการ<br>
+                            ปรึกษาฟรีกับผู้เชี่ยวชาญ
+                        </p>
+                        <div class="mb-6">
+                            <span class="text-lg sm:text-xl font-bold text-white">สอบถามได้ทาง</span>
+                            <p class="text-jade-300 text-sm sm:text-base mt-2">Instagram @ploy_s_gems</p>
+                        </div>
+                        <button onclick="openInstagram()" class="w-full bg-gradient-to-r from-jade-600 to-jade-500 hover:from-jade-700 hover:to-jade-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 group-hover:shadow-lg">
+                            ติดต่อออกแบบ
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Finished Products -->
+                <div class="glass-effect rounded-2xl p-6 hover:transform hover:scale-105 transition-all duration-500 jade-glow group md:col-span-2 lg:col-span-1">
+                    <div class="text-center">
+                        <div class="text-5xl sm:text-6xl mb-6 floating-animation">💍</div>
+                        <h4 class="text-xl sm:text-2xl font-bold text-jade-200 mb-3">ตัวชิ้นงานสำเร็จ</h4>
+                        <p class="text-jade-100 mb-4 text-sm sm:text-base leading-relaxed">
+                            เครื่องประดับหยกเขียวสำเร็จรูป<br>
+                            ดีไซน์เฉพาะจากช่างฝีมือ
+                        </p>
+                        <div class="mb-6">
+                            <span class="text-2xl sm:text-3xl font-bold text-white">฿100 - ฿100,000</span>
+                            <p class="text-jade-300 text-xs sm:text-sm mt-2">*ราคาขึ้นอยู่กับดีไซน์และความซับซ้อน</p>
+                        </div>
+                        <button onclick="contactForProduct('ชิ้นงานสำเร็จ')" class="w-full bg-gradient-to-r from-jade-600 to-jade-500 hover:from-jade-700 hover:to-jade-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 group-hover:shadow-lg">
+                            ดูผลงาน
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-12 sm:py-20 bg-black/20 fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-jade-200 to-jade-400 mb-12">
+                บริการของเรา
+            </h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-effect rounded-xl p-6 text-center hover:transform hover:scale-105 transition-all duration-300 group">
+                    <div class="text-4xl sm:text-5xl mb-4 floating-animation">🔍</div>
+                    <h4 class="text-lg sm:text-xl font-bold text-jade-200 mb-3">ตรวจสอบความแท้</h4>
+                    <p class="text-jade-100 text-sm sm:text-base mb-4 leading-relaxed">
+                        ตรวจสอบหยกเขียวและอัญมณี<br>ด้วยเครื่องมือมาตรฐานสากล
+                    </p>
+                    <button onclick="contactForService('ตรวจสอบความแท้')" class="text-jade-300 hover:text-jade-200 text-sm underline transition-colors">
+                        สอบถามบริการ
+                    </button>
+                </div>
+                
+                <div class="glass-effect rounded-xl p-6 text-center hover:transform hover:scale-105 transition-all duration-300 group">
+                    <div class="text-4xl sm:text-5xl mb-4 floating-animation">🎨</div>
+                    <h4 class="text-lg sm:text-xl font-bold text-jade-200 mb-3">ออกแบบเฉพาะ</h4>
+                    <p class="text-jade-100 text-sm sm:text-base mb-4 leading-relaxed">
+                        สร้างเครื่องประดับหยกเขียว<br>ตามความต้องการของคุณ
+                    </p>
+                    <button onclick="openInstagram()" class="text-jade-300 hover:text-jade-200 text-sm underline transition-colors">
+                        ติดต่อออกแบบ
+                    </button>
+                </div>
+                
+                <div class="glass-effect rounded-xl p-6 text-center hover:transform hover:scale-105 transition-all duration-300 group">
+                    <div class="text-4xl sm:text-5xl mb-4 floating-animation">🔧</div>
+                    <h4 class="text-lg sm:text-xl font-bold text-jade-200 mb-3">ซ่อมแซม</h4>
+                    <p class="text-jade-100 text-sm sm:text-base mb-4 leading-relaxed">
+                        บริการซ่อมแซมและปรับปรุง<br>เครื่องประดับหยกเขียว
+                    </p>
+                    <button onclick="contactForService('ซ่อมแซม')" class="text-jade-300 hover:text-jade-200 text-sm underline transition-colors">
+                        สอบถามการซ่อม
+                    </button>
+                </div>
+                
+                <div class="glass-effect rounded-xl p-6 text-center hover:transform hover:scale-105 transition-all duration-300 group">
+                    <div class="text-4xl sm:text-5xl mb-4 floating-animation">📜</div>
+                    <h4 class="text-lg sm:text-xl font-bold text-jade-200 mb-3">ใบรับรอง</h4>
+                    <p class="text-jade-100 text-sm sm:text-base mb-4 leading-relaxed">
+                        ใบรับรองคุณภาพและความแท้<br>จากสถาบันมาตรฐาน
+                    </p>
+                    <button onclick="contactForService('ใบรับรอง')" class="text-jade-300 hover:text-jade-200 text-sm underline transition-colors">
+                        สอบถามใบรับรอง
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 sm:py-20 fade-in">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-jade-200 to-jade-400 mb-12">
+                ติดต่อเรา
+            </h3>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Contact Information -->
+                <div class="glass-effect rounded-2xl p-6 sm:p-8">
+                    <h4 class="text-2xl sm:text-3xl font-bold text-jade-200 mb-8">ข้อมูลการติดต่อ</h4>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4 p-4 glass-effect rounded-lg">
+                            <div class="text-2xl sm:text-3xl">📱</div>
+                            <div class="flex-1">
+                                <h5 class="font-bold text-jade-200 text-lg">Instagram</h5>
+                                <p class="text-jade-100 mb-2">@ploy_s_gems</p>
+                                <p class="text-jade-300 text-sm mb-3">สำหรับการออกแบบและคำปรึกษา</p>
+                                <button onclick="openInstagram()" class="bg-gradient-to-r from-jade-600 to-jade-500 hover:from-jade-700 hover:to-jade-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">
+                                    เปิด Instagram
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4 p-4 glass-effect rounded-lg">
+                            <div class="text-2xl sm:text-3xl">📞</div>
+                            <div class="flex-1">
+                                <h5 class="font-bold text-jade-200 text-lg">โทรศัพท์</h5>
+                                <p class="text-jade-100 mb-2">โทรสอบถามได้ตลอดเวลา</p>
+                                <button onclick="callShop()" class="bg-gradient-to-r from-jade-600 to-jade-500 hover:from-jade-700 hover:to-jade-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">
+                                    โทรเลย
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4 p-4 glass-effect rounded-lg">
+                            <div class="text-2xl sm:text-3xl">💬</div>
+                            <div class="flex-1">
+                                <h5 class="font-bold text-jade-200 text-lg">Line</h5>
+                                <p class="text-jade-100 mb-2">แชทสอบถามได้ทันที</p>
+                                <button onclick="openLine()" class="bg-gradient-to-r from-jade-600 to-jade-500 hover:from-jade-700 hover:to-jade-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">
+                                    เพิ่ม Line
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4 p-4 glass-effect rounded-lg">
+                            <div class="text-2xl sm:text-3xl">⏰</div>
+                            <div class="flex-1">
+                                <h5 class="font-bold text-jade-200 text-lg">เวลาให้บริการ</h5>
+                                <p class="text-jade-100">ทุกวัน 9:00 - 20:00 น.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-4 bg-jade-500/20 rounded-lg border border-jade-400/30">
+                        <div class="flex items-start space-x-3">
+                            <div class="text-jade-300 text-xl">🟢</div>
+                            <div class="text-jade-100 text-sm leading-relaxed">
+                                <strong class="text-jade-200">พิเศษ!</strong> สำหรับลูกค้าที่ติดต่อผ่าน Instagram @ploy_s_gems จะได้รับคำปรึกษาฟรีเกี่ยวกับการเลือกหยกเขียวและการดูแลรักษา
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inquiry Form -->
+                <div class="glass-effect rounded-2xl p-6 sm:p-8">
+                    <h4 class="text-2xl sm:text-3xl font-bold text-jade-200 mb-8">สอบถามสินค้าและบริการ</h4>
+                    
+                    <form class="space-y-6" onsubmit="submitInquiry(event)">
+                        <div>
+                            <label class="block text-jade-200 font-medium mb-2">ชื่อ-นามสกุล</label>
+                            <input type="text" required class="w-full glass-effect border border-jade-500/30 rounded-lg px-4 py-3 text-white placeholder-jade-300 focus:outline-none focus:ring-2 focus:ring-jade-400 transition-all duration-300" placeholder="กรุณากรอกชื่อของคุณ">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-jade-200 font-medium mb-2">สินค้า/บริการที่สนใจ</label>
+                            <select class="w-full glass-effect border border-jade-500/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-jade-400 transition-all duration-300">
+                                <option value="" class="bg-jade-900">เลือกสินค้าหรือบริการ</option>
+                                <option value="jade" class="bg-jade-900">หยกเขียวจากพม่า</option>
+                                <option value="design" class="bg-jade-900">การออกแบบพลอย</option>
+                                <option value="finished" class="bg-jade-900">ตัวชิ้นงานสำเร็จ</option>
+                                <option value="check" class="bg-jade-900">ตรวจสอบความแท้</option>
+                                <option value="repair" class="bg-jade-900">ซ่อมแซม</option>
+                                <option value="certificate" class="bg-jade-900">ใบรับรอง</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-jade-200 font-medium mb-2">ช่วงราคาที่สนใจ</label>
+                            <select class="w-full glass-effect border border-jade-500/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-jade-400 transition-all duration-300">
+                                <option value="" class="bg-jade-900">เลือกช่วงราคา</option>
+                                <option value="100-1000" class="bg-jade-900">฿100 - ฿1,000</option>
+                                <option value="1000-10000" class="bg-jade-900">฿1,000 - ฿10,000</option>
+                                <option value="10000-50000" class="bg-jade-900">฿10,000 - ฿50,000</option>
+                                <option value="50000+" class="bg-jade-900">฿50,000 ขึ้นไป</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-jade-200 font-medium mb-3">สไตล์ที่ต้องการ</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <label class="flex items-center space-x-2 cursor-pointer p-2 glass-effect rounded-lg hover:bg-jade-500/20 transition-all duration-300">
+                                    <input type="radio" name="style" value="traditional" class="text-jade-600 focus:ring-jade-400">
+                                    <span class="text-jade-200">แบบดั้งเดิม</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer p-2 glass-effect rounded-lg hover:bg-jade-500/20 transition-all duration-300">
+                                    <input type="radio" name="style" value="modern" class="text-jade-600 focus:ring-jade-400">
+                                    <span class="text-jade-200">ทันสมัย</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer p-2 glass-effect rounded-lg hover:bg-jade-500/20 transition-all duration-300">
+                                    <input type="radio" name="style" value="minimal" class="text-jade-600 focus:ring-jade-400">
+                                    <span class="text-jade-200">เรียบง่าย</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer p-2 glass-effect rounded-lg hover:bg-jade-500/20 transition-all duration-300">
+                                    <input type="radio" name="style" value="luxury" class="text-jade-600 focus:ring-jade-400">
+                                    <span class="text-jade-200">หรูหรา</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-jade-200 font-medium mb-2">รายละเอียดเพิ่มเติม</label>
+                            <textarea rows="4" class="w-full glass-effect border border-jade-500/30 rounded-lg px-4 py-3 text-white placeholder-jade-300 focus:outline-none focus:ring-2 focus:ring-jade-400 transition-all duration-300 resize-none" placeholder="บอกเราเกี่ยวกับสิ่งที่คุณต้องการ..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-jade-600 to-jade-500 hover:from-jade-700 hover:to-jade-600 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 shadow-2xl transform hover:scale-105">
+                            <span class="flex items-center justify-center space-x-2">
+                                <span>📱</span>
+                                <span>ส่งข้อมูลไป @ploy_s_gems</span>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/40 border-t border-jade-500/20 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <div class="text-2xl floating-animation">🟢</div>
+                <span class="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-jade-200 to-jade-400">PLOYSGEMS</span>
+            </div>
+            <p class="text-jade-200 text-sm sm:text-base mb-2">ผู้เชี่ยวชาญด้านหยกเขียวจากพม่าและเครื่องประดับหรู</p>
+            <p class="text-jade-300 text-xs sm:text-sm mb-4">© 2024 PLOYSGEMS. สงวนลิขสิทธิ์ทุกประการ</p>
+            <div class="flex justify-center space-x-6">
+                <button onclick="openInstagram()" class="text-jade-300 hover:text-jade-200 transition-colors duration-300 flex items-center space-x-1">
+                    <span>📱</span>
+                    <span class="text-sm">Instagram</span>
+                </button>
+                <button onclick="openLine()" class="text-jade-300 hover:text-jade-200 transition-colors duration-300 flex items-center space-x-1">
+                    <span>💬</span>
+                    <span class="text-sm">Line</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button onclick="openInstagram()" class="bg-gradient-to-r from-jade-600 to-jade-500 hover:from-jade-700 hover:to-jade-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 jade-glow">
+            <div class="flex items-center space-x-2">
+                <span class="text-xl">📱</span>
+                <span class="hidden sm:block font-bold text-sm">ติดต่อเรา</span>
+            </div>
+        </button>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Contact functions
+        function openInstagram() {
+            window.open('https://www.instagram.com/ploy_s_gems?igsh=bTRybDdvN2w0eHVq', '_blank');
+        }
+
+        function callShop() {
+            alert('📞 โทรติดต่อร้าน PLOYSGEMS\n\nในเว็บไซต์จริง จะเปิดแอปโทรศัพท์\nหรือแสดงหมายเลขโทรศัพท์ของร้าน');
+        }
+
+        function openLine() {
+            alert('💬 เพิ่ม Line PLOYSGEMS\n\nในเว็บไซต์จริง จะเปิดแอป Line\nหรือแสดง QR Code สำหรับเพิ่มเพื่อน');
+        }
+
+        function contactForProduct(productName) {
+            alert(`🟢 สอบถาม${productName}\n\nกำลังเปิด Instagram @ploy_s_gems\nเพื่อสอบถามรายละเอียดและราคา\n\nหรือกรอกฟอร์มด้านล่างเพื่อให้เราติดต่อกลับ!`);
+            openInstagram();
+        }
+
+        function contactForService(serviceName) {
+            alert(`🔧 สอบถามบริการ${serviceName}\n\nกำลังเปิด Instagram @ploy_s_gems\nเพื่อสอบถามรายละเอียดและราคา\n\nหรือกรอกฟอร์มด้านล่างเพื่อให้เราติดต่อกลับ!`);
+            openInstagram();
+        }
+
+        function submitInquiry(event) {
+            event.preventDefault();
+            alert('📱 ขอบคุณสำหรับความสนใจ!\n\nระบบจะส่งข้อมูลของคุณไปยัง Instagram @ploy_s_gems\nทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง\n\nหรือคุณสามารถติดต่อโดยตรงผ่าน Instagram ได้เลย!');
+            openInstagram();
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-black/50');
+            } else {
+                nav.classList.remove('bg-black/50');
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Initialize first section as visible
+        document.querySelector('#home').classList.add('visible');
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96fc093b70bc4ba1',t:'MTc1NTI5NTk3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
